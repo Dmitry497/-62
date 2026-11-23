@@ -1,0 +1,116 @@
+.preorder {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.preorder__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  background: var(--color-bg-soft);
+  border-radius: 24px;
+  padding: 40px 50px;
+  overflow: hidden; /* Важно, чтобы картинка не вылезала */
+}
+
+.preorder__media {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start; /* Прижимаем картинку к левому краю */
+  align-items: center;
+  max-height: 300px;
+}
+
+.preorder__img {
+  width: 100%;
+  max-width: 550px; /* Чуть больше, чтобы заполнить */
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply; 
+  transform: translateX(-20px); /* Сдвигаем картинку чуть левее к линии */
+}
+
+.preorder__content {
+  flex: 1;
+  max-width: 500px;
+}
+
+.preorder__title {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+  color: #000000;
+}
+
+.preorder__desc {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555555;
+  margin: 0 0 24px 0;
+}
+
+/* АДАПТАЦИЯ КАК НА ФОТО №3 */
+@media (max-width: 992px) {
+  .preorder {
+    padding: 20px 16px;
+  }
+
+  .preorder__inner {
+    flex-direction: column;
+    padding: 24px 16px;
+    text-align: center;
+    gap: 16px;
+    border-radius: 16px;
+  }
+
+  .preorder__media {
+    width: 100%;
+    max-height: none;
+    justify-content: center;
+    margin-bottom: -10px; /* Прижимаем картинку к тексту */
+  }
+
+  .preorder__img {
+    width: 100%;
+    max-width: 100%;
+    transform: scale(1.1) translateX(0); /* Убираем сдвиг, делаем крупнее */
+    mix-blend-mode: multiply;
+  }
+
+  .preorder__content {
+    max-width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .preorder__title {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .preorder__desc {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .preorder__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+#preorder .test-drive__img {
+  max-height: 420px; /* Увеличили с 280px до 320px (можешь попробовать 340px) */
+  object-fit: contain;
+  width: 100%;
+}
+@media (max-width: 992px) {
+  /* ... твои существующие стили ... */
+
+  #preorder .test-drive__img {
+    max-height: 200px; /* Уменьшили с 250px до 200px */
+    transform: scale(1); 
+  }
+}

@@ -1,0 +1,143 @@
+.promo {
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.promo__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center; /* Выравниваем всё по центру */
+  gap: 40px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 25%, #1a1a1a 50%, #2a2a2a 100%);
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  padding: 40px 50px; /* Вернули отступы по бокам */
+  width: 100%;
+  max-width: 1200px;
+  min-height: 320px; /* Заменили height на min-height */
+  overflow: hidden;
+}
+
+/* ЛЕВАЯ ЧАСТЬ (КАРТИНКА) */
+.promo__media {
+  position: relative;
+  height: 100%;
+  min-height: 250px; /* Чтобы блок не схлопывался */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.promo__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 170%;
+  height: 170%;
+  max-width: none;
+  object-fit: contain;
+}
+
+/* ПРАВАЯ ЧАСТЬ (ТЕКСТ) */
+.promo__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Текст ровно по центру */
+  height: 100%;
+}
+
+/* СЕРЫЙ БЕЙДЖ */
+.promo__content .badge {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #a0a0a0; /* Чуть серый */
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.promo__content .badge::before {
+  display: none;
+}
+
+.promo__title {
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 16px 0;
+  color: #ffffff;
+}
+
+.promo__desc {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #b0b0b0;
+  margin: 0 0 24px 0;
+}
+
+.promo__btn {
+  display: inline-flex;
+  width: fit-content;
+}
+
+/* МОБИЛКИ */
+@media (max-width: 992px) {
+  .promo {
+    padding: 20px 16px;
+  }
+  
+  .promo__container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 24px 16px;
+    text-align: center;
+    gap: 16px;
+    border-radius: 16px;
+  }
+  
+  .promo__media {
+    width: 100%;
+    height: 250px;
+    min-height: auto;
+    position: relative;
+  }
+  
+  .promo__img {
+    position: static;
+    transform: scale(1.1);
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin: 0;
+  }
+  
+  .promo__content {
+    width: 100%;
+    align-items: center;
+    padding: 0;
+  }
+
+  .promo__content .badge {
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  .promo__title {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  
+  .promo__desc {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .promo__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
